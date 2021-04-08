@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- load the d3.js library -->    
+    <script src="../extern/d3.v4.min.js"></script>
+
+    <!-- load the visualcharts script -->
+    <script src="../extern/visualcharts.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <style>
+        .tooltip {
+            min-width: 100px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #898FDE;
+            color: #fff;
+            border-radius: 2px;
+            padding: 7px;
+            position: absolute;
+            display: none;
+            pointer-events: none;
+        }
+
+    </style>
+    </head>
+    <body>
+    <div id="data-subject">Data transmission observations.</div>
+    
+    <div style="display: inline-block; vertical-align: top;" id="my_graph"></div>
+    <div style="display: inline-block" id="singleton"></div>
+
+    <script>
+        var chart = visualcharts.createChart("2DLine");
+        chart.setup({
+                    "colorset": ["#96CA2D", "#4184F3", "#01B0F0", "#046380", "#787746", "#407CA4"],
+                    "width": 700,
+                    "height": 200,
+                    "accessors": {
+                        "yAxisTxt": function (txt) { return "$" + txt },
+                        "xAxisTxt": null,
+                        "xDataAccessor": function (d, i) { return d[0] },
+                        "yDataAccessor": function (d, i) { return d[1] }
+                    },
+            })
+            .bind("my_graph")
+            //.dataset([getDataset(0, 10, 150, 1000), getDataset(0, 11, 1100, 1700), getDataset(0, 9, 1900, 2100), getDataset(0, 13, 2300, 3000), getDataset(0, 15, 3100, 3700)]);    
+            .dataset([getDataset(1, 10, 500, 1500), getDataset(1, 100, 150, 1000)]);
+        /*var single = visualcharts.createChart("line")
+                                 .width(500)
+                                 .height(100)
+                                 .bind("singleton")
+                                 .tooltip(true)
+                                 .context(true)
+                                 .symbol("circle", 20)
+                                 .symscale(1.7)
+                                 .dataset([getDataset(0, 10, 150, 300)]);*/
+    </script>
+
+    </body>
+</html>

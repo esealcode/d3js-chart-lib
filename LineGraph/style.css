@@ -1,0 +1,128 @@
+body { font: 12px Arial;}
+
+.draw {
+    clip-path: url(#clip);
+}
+
+.plot {
+    /*clip-path: url(#clip);*/
+}
+
+.graph-tooltip {
+  min-width: 100px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #898FDE;
+  color: #fff;
+  border-radius: 2px;
+  padding: 7px;
+  position: absolute;
+  display: none;
+  pointer-events: none;
+}
+
+#data-subject {
+  font-size: 23px;
+  color: #444;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.follow_line {
+  stroke: #888;
+  stroke-width: 1;
+  opacity: 0.7;
+}
+
+path { 
+    pointer-events: none;
+    stroke-width: 3;
+    fill: none;
+    cursor: pointer;
+    z-index: -2;
+}
+
+.tick line{
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.debug_txt {
+  fill: #888;
+  font-size: 10px;
+}
+
+.b_text {
+  fill: #888;
+  font-size: 10px;
+}
+
+.dot_wrapper {
+  opacity: 0.3;
+  display: none;
+  clip-path: url(#clip);
+}
+
+.axis text {
+  fill: #aaa;
+  font-size: 11px;
+  font-family: "Helvetica";
+}
+
+.axis path,
+.axis line {
+    z-index: 1;
+    stroke: #aaa;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+.stroke_blue {
+  stroke: #7F98BD;
+}
+
+.stroke_green {
+  stroke: #73B284;
+}
+
+.area_blue {
+  fill: #A3BDE9;
+  opacity: 0.3;
+}
+
+.area_green {
+  fill: #73B284;
+  opacity: 0.3;
+}
+
+._dot {
+  display: none;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.green_dot {
+  fill: #4A964A;
+  stroke: #428E42;
+}
+
+.blue_dot {
+  fill: #6581AC;
+  stroke: #6581AC;
+}
+
+.brush .selection {
+    fill: rgba(118, 128, 196, 0.7);
+    stroke: #7680C4;
+    stroke-width: 2px;
+}
+
+.context path {
+    pointer-events: none;
+}
